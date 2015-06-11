@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+  </head>
+  <body ng-controller="testcontroller">
+      <h1>{{tf1}}</h1>
+	  <button ng-click="play()" class="button">click</button>
+	  <h1>{{tf2}}</h1>
+	  <input type="text" ng-change="onChangeValue1()" ng-model="displayValue1">
+	  <input type="text" ng-model="displayValue2">
+  </body>
+  <script src="angular.min.js"></script>
+  <script>
+
+  angular.module("myapp", []).controller("testcontroller",
+	function testcontroller($scope) {
+	$scope.tf1 = "Hello World";
+	
+	$scope.play = function() {
+    $scope.tf2 = "caba";
+	};
+	
+	$scope.onChangeValue1 = function() {
+			$scope.displayValue2 = $scope.displayValue1;
+	};
+	
+	});
+  </script>
+</html>
